@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaAdvanced.iml" filepath="$PROJECT_DIR$/JavaAdvanced.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileRemoteStorage.iml" filepath="$PROJECT_DIR$/FileRemoteStorage.iml" />
     </modules>
   </component>
 </project>
