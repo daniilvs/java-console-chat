@@ -1,7 +1,8 @@
+package grabage;
+
 import java.io.*;
 import java.net.*;
 import java.util.HashMap;
-import java.util.Scanner;
 
 // chat server for interaction with multiple clients through a tcp socket connection.
 // contains an inner class for handling each client connection synchronously.

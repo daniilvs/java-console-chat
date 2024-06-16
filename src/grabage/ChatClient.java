@@ -1,6 +1,7 @@
+package grabage;
+
 import java.net.*;
 import java.io.*;
-import java.util.Properties;
 
 public class ChatClient {
     private String hostname;

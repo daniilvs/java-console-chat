@@ -1,6 +1,7 @@
+package grabage;
+
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 
 public class UserThread extends Thread {
@@ -45,7 +46,7 @@ public class UserThread extends Thread {
             server.broadcast(serverMessage, this);
 
         } catch (IOException ex) {
-            System.out.println("Error in UserThread: " + ex.getMessage());
+            System.out.println("Error in grabage.UserThread: " + ex.getMessage());
             ex.printStackTrace();
         }
     }

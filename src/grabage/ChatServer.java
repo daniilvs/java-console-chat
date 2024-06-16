@@ -1,3 +1,5 @@
+package grabage;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -35,7 +37,7 @@ public class ChatServer {
  
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.out.println("Syntax: java ChatServer <port-number>");
+            System.out.println("Syntax: java grabage.ChatServer <port-number>");
             System.exit(0);
         }
  
@@ -64,7 +66,7 @@ public class ChatServer {
     }
  
             /**
-      * When a client is disconneted, removes the associated username and UserThread
+      * When a client is disconneted, removes the associated username and grabage.UserThread
       */
     void removeUser(String userName, UserThread aUser) {
         boolean removed = userNames.remove(userName);

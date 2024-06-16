@@ -36,13 +36,6 @@ public class Server implements Runnable{
         }
     }
 
-    public void broadcast(String message) {
-        for (ConnectionHandler ch : connections) {
-            if (ch != null) {
-                ch.sendMessage(message);
-            }
-        }
-    }
 
     public void shutdown() {
         try {
@@ -75,13 +68,16 @@ public class Server implements Runnable{
             try {
                 out = new PrintWriter(client.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
                 out.println("Введите имя: ");
                 nickname = in.readLine();
                 System.out.println(nickname + " присоединился");
-                broadcast(nickname + " вошел в чат");
+                out.println(nickname + " вошел в чат");
+
                 String message;
                 while ((message = in.readLine()) != null) {
-                    if (message.startsWith("/nick ")) {
+
+                    if (message.startsWith("/nick")) {
                         String[] messageSplit = message.split(" ", 2);
                         if (messageSplit.length == 2) {
                             broadcast(nickname + " поменял никнейм на " + messageSplit[1]);
@@ -102,9 +98,14 @@ public class Server implements Runnable{
             }
         }
 
-        public void sendMessage(String message) {
-            out.println(message);
+        public void broadcast(String message) {
+            for (ConnectionHandler ch : connections) {
+                if ((ch != null) && (!ch.nickname.equals(nickname))) {
+                    out.println(message);
+                }
+            }
         }
+
 
         public void shutdown() {
             try {
